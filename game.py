@@ -17,5 +17,11 @@ class Game():
 
     def generate_next_turn(self):
         turn = self.turn_class(self.next_turn, self.board)
-        # if turn.is_valid():
-        #     self.increment_turn()
+        if turn.is_valid():
+            self._increment_turn()
+
+    def _increment_turn(self):
+        if self.next_turn == self.player_1:
+            self.next_turn = self.player_2
+        else:
+            self.next_turn = self.player_1
