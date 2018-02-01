@@ -15,3 +15,7 @@ class BoardValidator():
         diag_1 = "".join([board[i][i] for i in range(3)])
         diag_2 = "".join([board[2-i][i] for i in range(3)])
         return (diag_1 == "XXX" or diag_2 == "XXX") or (diag_1 == "OOO" or diag_2 == "OOO")
+
+    def validate_stalemate(self):
+        board = self.board_state
+        return not " " in "".join(["".join(board[i]) for i in range(3)])

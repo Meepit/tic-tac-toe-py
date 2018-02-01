@@ -37,3 +37,8 @@ class TestBoardValidator(unittest.TestCase):
         board_state = [['L', 'L', 'X'], ['L', 'X', 'L'], ['X', 'L', 'L']]
         self.board_validator.board_state = board_state
         self.assertTrue(self.board_validator.validate_diagonals())
+
+    def test_validate_stalemate(self):
+        board_state = [['X', 'O', 'X'],['X', 'X', 'O'],['O', 'X', 'O']]
+        self.board_validator.board_state = board_state
+        self.assertTrue(self.board_validator.validate_stalemate())

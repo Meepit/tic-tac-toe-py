@@ -12,7 +12,8 @@ class BoardTest(unittest.TestCase):
         self.cell_obj = mock.Mock()
         self.cell_obj.get_value = MagicMock(return_value= ' ')
         self.cell_class.return_value = self.cell_obj
-        self.board = Board(self.cell_class)
+        self.board_validator = MagicMock()
+        self.board = Board(self.cell_class, self.board_validator)
 
     def test_default_size(self):
         self.assertEqual(3, self.board.get_size())
@@ -25,5 +26,3 @@ class BoardTest(unittest.TestCase):
 
     def test_get_string_cell_board(self):
         self.assertEqual([[' ', ' ', ' '],[' ', ' ', ' '],[' ', ' ', ' ']], self.board.get_string_cell_board())
-
-    
