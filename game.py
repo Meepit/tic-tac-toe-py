@@ -1,9 +1,10 @@
 from random import choice
 
 class Game():
-    def __init__(self, player_class, turn_class):
+    def __init__(self, player_class, turn_class, board):
         self.player_class = player_class
         self.turn_class = turn_class
+        self.board = board
         self._generate_players()
         self._get_first()
 
@@ -15,4 +16,6 @@ class Game():
         self.next_turn = choice([self.player_1, self.player_2])
 
     def generate_next_turn(self):
-        self.turn_class()
+        turn = self.turn_class(self.next_turn, self.board)
+        # if turn.is_valid():
+        #     self.increment_turn()
