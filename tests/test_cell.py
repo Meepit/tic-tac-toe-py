@@ -8,7 +8,11 @@ class TestCell(unittest.TestCase):
         self.cell = Cell()
 
     def test_not_available_on_init(self):
-        self.assertFalse(self.cell.is_available())
+        self.assertTrue(self.cell.is_available())
 
     def test_empty_state_on_init(self):
         self.assertEqual(' ', self.cell.get_value())
+
+    def test_change_value(self):
+        self.cell.change_value('X')
+        self.assertEqual('X', self.cell.get_value())
