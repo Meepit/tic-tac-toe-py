@@ -25,3 +25,5 @@ class BoardTest(unittest.TestCase):
 
     def test_get_string_cell_board(self):
         self.assertEqual([[' ', ' ', ' '],[' ', ' ', ' '],[' ', ' ', ' ']], self.board.get_string_cell_board())
+
+    

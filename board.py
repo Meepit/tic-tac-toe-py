@@ -1,6 +1,7 @@
 class Board():
-    def __init__(self, cell_class, size=3):
+    def __init__(self, cell_class, board_validator, size=3):
         self.cell_class = cell_class
+        self.board_validator = board_validator
         self.size = size
         self._generate_board()
 
