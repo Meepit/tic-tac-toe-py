@@ -13,4 +13,6 @@ class Game():
 
     def _get_first(self):
         self.next_turn = choice([self.player_1, self.player_2])
-        
+
+    def generate_next_turn(self):
+        self.turn_class()

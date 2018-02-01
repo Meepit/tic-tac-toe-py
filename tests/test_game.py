@@ -20,3 +20,7 @@ class GameTest(unittest.TestCase):
 
     def test_random_first_player(self):
         self.assertTrue(self.game.next_turn in [self.player_1, self.player_2])
+
+    def test_turn_generation(self):
+        self.game.generate_next_turn()
+        self.turn_class.assert_called()
