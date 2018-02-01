@@ -21,3 +21,6 @@ class TestCell(unittest.TestCase):
         self.cell.change_value('X')
         self.cell.change_value('O')
         self.assertEqual('X', self.cell.get_value())
+
+    def test_str(self):
+        self.assertEqual(' ', self.cell.__repr__())
