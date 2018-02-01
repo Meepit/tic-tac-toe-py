@@ -7,11 +7,11 @@ from board import Board
 
 class BoardTest(unittest.TestCase):
     def setUp(self):
-        self.cellClass = mock.Mock()
-        self.board = Board(self.cellClass)
+        self.cell_class = mock.Mock()
+        self.board = Board(self.cell_class)
 
     def test_default_size(self):
-        self.assertEqual(3, self.board.getSize())
+        self.assertEqual(3, self.board.get_size())
 
     def test_board_generation(self):
         self.assertEqual(3, len(self.board.board))

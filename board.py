@@ -4,7 +4,7 @@ class Board():
         self.size = size
         self._generateBoard()
 
-    def getSize(self):
+    def get_size(self):
         return self.size
 
     def _generateBoard(self):
@@ -12,5 +12,3 @@ class Board():
 
     def get_board(self):
         return self.board
-
-    
