@@ -5,7 +5,9 @@ from unittest.mock import MagicMock
 
 class TestBoardValidator(unittest.TestCase):
     def setUp(self):
-        pass
+        self.board_class = mock.Mock()
+        self.board_validator = BoardValidator()
 
-    def validates_horizontal_winning_position(self):
-        pass
+    def validates_board_transpose(self):
+        self.board_class.board_state = [[0,1,2], [0,1,2], [0,1,2]]
+        self.assertEqual(self.board_class.transpose_board(), [[0,0,0], [1,1,1], [2,2,2]])
