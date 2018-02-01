@@ -2,13 +2,16 @@ class Board():
     def __init__(self, cell_class, size=3):
         self.cell_class = cell_class
         self.size = size
-        self._generateBoard()
+        self._generate_board()
 
     def get_size(self):
         return self.size
 
-    def _generateBoard(self):
+    def _generate_board(self):
         self.board = [[self.cell_class() for i in range(self.size)] for i in range(self.size)]
 
     def get_board(self):
         return self.board
+
+    def get_string_cell_board(self):
+        return [[self.board[i][j].get_value() for j in range(3)] for i in range(3)]
