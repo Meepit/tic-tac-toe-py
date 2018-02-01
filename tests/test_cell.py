@@ -22,5 +22,9 @@ class TestCell(unittest.TestCase):
         self.cell.change_value('O')
         self.assertEqual('X', self.cell.get_value())
 
+    def test_cannot_change_value_to_invalid_char(self):
+        self.cell.change_value('Z')
+        self.assertEqual(' ', self.cell.get_value())
+
     def test_str(self):
         self.assertEqual(' ', self.cell.__repr__())
