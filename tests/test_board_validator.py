@@ -27,3 +27,13 @@ class TestBoardValidator(unittest.TestCase):
         board_state = [['O', 'O', 'O'], ['X', 'X', 'O'], ['O', 'O', 'X']]
         self.board_validator.board_state = board_state
         self.assertTrue(self.board_validator.validate_non_diagonals())
+
+    def test_diagonal_1(self):
+        board_state = [['O', 'L', 'L'], ['L', 'O', 'L'], ['L', 'L', 'O']]
+        self.board_validator.board_state = board_state
+        self.assertTrue(self.board_validator.validate_diagonals())
+
+    def test_diagonal_2(self):
+        board_state = [['L', 'L', 'X'], ['L', 'X', 'L'], ['X', 'L', 'L']]
+        self.board_validator.board_state = board_state
+        self.assertTrue(self.board_validator.validate_diagonals())
