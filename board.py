@@ -9,3 +9,5 @@ class Board():
 
     def _generateBoard(self):
         self.board = [[self.cellClass() for i in range(self.size)] for i in range(self.size)]
+
+    
