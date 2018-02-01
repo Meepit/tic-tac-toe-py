@@ -16,3 +16,8 @@ class TestCell(unittest.TestCase):
     def test_change_value(self):
         self.cell.change_value('X')
         self.assertEqual('X', self.cell.get_value())
+
+    def test_cannot_change_value_if_not_available(self):
+        self.cell.change_value('X')
+        self.cell.change_value('O')
+        self.assertEqual('X', self.cell.get_value())

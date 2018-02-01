@@ -12,3 +12,4 @@ class Cell():
     def change_value(self, value):
         if self.is_available() and value in ['X', 'O']:
             self.state = value
+            self.available = False
