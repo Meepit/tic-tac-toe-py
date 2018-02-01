@@ -11,3 +11,5 @@ class PlayerTest(unittest.TestCase):
 
     def test_get_piece(self):
         self.assertEqual('X', self.player.piece)
+
+    
