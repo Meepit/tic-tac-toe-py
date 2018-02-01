@@ -16,3 +16,6 @@ class Board():
 
     def get_string_cell_board(self):
         return [[self.board[i][j].get_value() for j in range(3)] for i in range(3)]
+
+    def validate(self):
+        self.board_validator.validate()
