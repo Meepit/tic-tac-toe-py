@@ -15,3 +15,6 @@ class BoardTest(unittest.TestCase):
 
     def test_board_generation(self):
         self.assertEqual(3, len(self.board.board))
+
+    def test_get_board(self):
+        self.assertEqual(3, len(self.board.get_board()))
