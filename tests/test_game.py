@@ -17,3 +17,6 @@ class GameTest(unittest.TestCase):
 
     def test_player_creation(self):
         self.assertEqual(self.player_1, self.game.player_1)
+
+    def test_random_first_player(self):
+        self.assertTrue(self.game.next_turn in [self.player_1, self.player_2])
