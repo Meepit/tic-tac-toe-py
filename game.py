@@ -1,0 +1,9 @@
+class Game():
+    def __init__(self, player_class, turn_class):
+        self.player_class = player_class
+        self.turn_class = turn_class
+        self._generate_players()
+
+    def _generate_players(self):
+        self.player_1 = self.player_class()
+        self.player_2 = self.player_class()

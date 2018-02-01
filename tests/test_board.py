@@ -1,7 +1,6 @@
 import unittest
 from unittest import mock
 from unittest.mock import MagicMock
-from pprint import pprint
 import mock
 
 from board import Board

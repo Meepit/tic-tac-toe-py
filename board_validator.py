@@ -19,3 +19,7 @@ class BoardValidator():
     def validate_stalemate(self):
         board = self.board_state
         return not " " in "".join(["".join(board[i]) for i in range(3)])
+
+    def validate(self):
+        # If any of the validate methods are true, game is over
+        return not self.validate_non_diagonals() or self.validate_diagonals or self.validate_stalemate
