@@ -29,3 +29,8 @@ class BoardTest(unittest.TestCase):
     def test_validator_is_used(self):
         self.board.validate()
         self.board_validator.validate.assert_called()
+
+    def test_make_move(self):
+        self.cell_obj.get_value = MagicMock(return_value= 'X')
+        self.board.make_move([0,0], 'X')
+        self.assertEqual(self.board.board[0][0].get_value(), 'X')
