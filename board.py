@@ -21,4 +21,5 @@ class Board():
         self.board_validator.validate()
 
     def make_move(self, pos, value):
-        self.board[pos[0]][pos[1]].change_value(value)
+        if self.board[pos[0]][pos[1]].change_value(value):
+            return True

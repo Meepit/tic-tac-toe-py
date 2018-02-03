@@ -13,6 +13,7 @@ class Cell():
         if self.is_available() and value in ['X', 'O']:
             self.state = value
             self.available = False
+            return True
 
     def __repr__(self):
         return self.state
