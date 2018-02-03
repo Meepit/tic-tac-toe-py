@@ -18,8 +18,9 @@ class Board():
         return [[self.board[i][j].get_value() for j in range(3)] for i in range(3)]
 
     def validate(self):
-        self.board_validator.validate()
+        self.board_validator.validate(self.get_string_cell_board())
 
     def make_move(self, pos, value):
         if self.board[pos[0]][pos[1]].change_value(value):
+            self.validate()
             return True

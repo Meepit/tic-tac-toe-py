@@ -20,6 +20,11 @@ class BoardValidator():
         board = self.board_state
         return not " " in "".join(["".join(board[i]) for i in range(3)])
 
-    def validate(self):
+    def validate(self, board_state):
         # If any of the validate methods are true, game is over
-        return not self.validate_non_diagonals() or self.validate_diagonals or self.validate_stalemate
+        self.board_state = board_state
+        flag = not (self.validate_non_diagonals() or self.validate_diagonals() or self.validate_stalemate())
+        if not flag:
+            print("Game over")
+            self.message = "GAME OVER"
+        return flag
