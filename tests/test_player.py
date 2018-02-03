@@ -12,4 +12,6 @@ class PlayerTest(unittest.TestCase):
     def test_get_piece(self):
         self.assertEqual('X', self.player.piece)
 
-    
+
+    def test_make_move(self):
+        self.assertEqual([0,0], self.player.make_move([0,0]))

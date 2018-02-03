@@ -19,7 +19,7 @@ class TurnTest(unittest.TestCase):
         self.assertTrue(self.turn.is_valid())
 
     def test_invalid_move(self):
-        self.player.get_move = MagicMock(return_value = 2)
+        self.player.make_move = MagicMock(return_value = 2)
         self.player.get_piece = MagicMock(return_value = 'X')
         self.board.make_move = MagicMock(return_value = False)
         self.turn.get_move()

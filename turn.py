@@ -5,7 +5,7 @@ class Turn():
         self.valid_turn = False
 
     def get_move(self):
-        move, piece = self.player.get_move(), self.player.get_piece()
+        move, piece = self.player.make_move(), self.player.get_piece()
         if self.board.make_move(move, piece):
             self.valid_turn = True
         else:
